@@ -23,5 +23,7 @@ class Book extends Model
         'year',
         'image',
         'price',
+        'stock',
+        'category_id'
     ];
 }

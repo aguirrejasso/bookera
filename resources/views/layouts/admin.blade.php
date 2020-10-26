@@ -81,7 +81,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('book.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Ver Libros</p>
                                     </a>
@@ -94,15 +94,29 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    Simple Link
-                                    <span class="right badge badge-danger">New</span>
+                                    Categorias
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                        </li> --}}
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('category.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ver Categorias</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('category.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Publicar Nueva</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

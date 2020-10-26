@@ -17,4 +17,5 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/admin/libros', App\Http\Controllers\BookController::class)->names('book');
+Route::resource('/admin/categorias', App\Http\Controllers\CategoryController::class)->names('category');
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');

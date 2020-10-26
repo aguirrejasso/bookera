@@ -57,6 +57,15 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select class="form-control" name="category_id" required>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{$category->category}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="description">Descripcion</label>
                                     <textarea type="text" class="form-control" id="description" name="description"
                                         placeholder="Descripcion del libro" required></textarea>
@@ -88,6 +97,12 @@
                                     <label for="price">Precio</label>
                                     <input type="number" class="form-control" id="price" name="price"
                                         placeholder="Precio a la venta" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="stock">Cantidad</label>
+                                    <input type="number" class="form-control" id="stock" name="stock"
+                                        placeholder="Cantidad a agregar" required>
                                 </div>
 
                             </div>

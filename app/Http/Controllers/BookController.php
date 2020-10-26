@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -14,7 +15,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        
+        $books = Book::all();
+
+        return view('book.listBook', compact('books'));
     }
 
     /**
@@ -24,7 +27,10 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('book.formBook');
+
+        $categories = Category::all();
+
+        return view('book.formBook', compact('categories'));
     }
 
     /**
@@ -35,6 +41,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name'        => 'required|string',
             'author'      => 'required|string',
@@ -43,7 +50,8 @@ class BookController extends Controller
             'edition'     => 'required|integer',
             'year'        => 'required|integer',
             'image'       => 'required|image',
-            'price'       => 'required|numeric'
+            'price'       => 'required|numeric',
+            'category_id' => 'required|numeric'
             
         ]);
 
@@ -64,10 +72,14 @@ class BookController extends Controller
             'edition'     => $request->edition,
             'year'        => $request->year,
             'image'       => $fileName,
-            'price'       => $request->price            
+            'price'       => $request->price,
+            'stock'       => $request->stock,  
+            'category_id' => $request->category_id,          
         ]);
 
-        return view('book.formBook');
+        $categories = Category::all();
+
+        return view('book.formBook', compact('categories'));
     }
 
     /**

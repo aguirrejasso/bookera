@@ -113,8 +113,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="option-item"><a href="{{route('login')}}">Ingresar</a></div>
+                            <div class="option-item">
+                                @if(!Auth::check())
+                                    <a href="{{route('login')}}">Ingresar</a>
+                                @else
+                                    <a href="{{route('login')}}">{{Auth::user()->name}}</a>
+                                @endif
+                            </div>
+
                             <div class="option-item"><a href="#">Carrito <i class="fas fa-shopping-bag"></i></a></div>
+
+                            @if(Auth::check())
+                                <div class="option-item"><a href="{{ route('dashboard') }}" class="text-danger">Administrar </a></div>
+                            @endif
+
                         </div>
                     </div>
                 </nav>

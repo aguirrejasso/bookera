@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -89,7 +96,7 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(Book $libro)
     {
         //
     }
@@ -100,9 +107,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(Book $libro)
     {
-        //
+        $categories = Category::all();
+
+        return view('book.formBook', compact('libro', 'categories'));
     }
 
     /**
@@ -112,9 +121,76 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Book $libro)
     {
-        //
+        $request->validate([
+            'name'        => 'required|string',
+            'author'      => 'required|string',
+            'language'    => 'required|string',
+            'description' => 'required|string',
+            'edition'     => 'required|integer',
+            'year'        => 'required|integer',
+            'image'       => 'image',
+            'price'       => 'required|numeric',
+            'category_id' => 'required|numeric',
+            'sales'       => 'numeric'
+            
+        ]);
+
+        if($request->hasFile('image'))
+        {
+            Storage::delete($libro->image);
+
+            $image = $request->file('image');
+            $fileName = time() . $image->getClientOriginalName();
+            $destination = public_path('img/books');
+            $request->image->move($destination, $fileName);
+
+            $libro->image = $fileName;
+        }
+
+        if($request->has('name')){
+            $libro->name = $request->name;
+        }
+
+        if($request->has('author')){
+            $libro->author = $request->author;
+        }
+
+        if($request->has('language')){
+            $libro->language = $request->language;
+        }
+
+        if($request->has('description')){
+            $libro->description = $request->description;
+        }
+
+        if($request->has('edition')){
+            $libro->edition = $request->edition;
+        }
+
+        if($request->has('year')){
+            $libro->year = $request->year;
+        }
+
+        if($request->has('price')){
+            $libro->price = $request->price;
+        }
+
+        if($request->has('category_id')){
+            $libro->category_id = $request->category_id;
+        }
+
+        if($request->has('sales')){
+            $libro->sales = $request->sales;
+        }
+
+
+        $libro->save();
+
+        
+
+        return redirect()->route('book.index');
     }
 
     /**
@@ -123,9 +199,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy(Book $libro)
     {
-        //
+        $libro->delete();
+
+        return redirect()->route('book.index');
     }
     public function show(Request $request)
     {

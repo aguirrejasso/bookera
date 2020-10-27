@@ -25,7 +25,9 @@ class CreateBooksTable extends Migration
             $table->string('image');
             $table->double('price', 8, 2);
             $table->unsignedInteger('stock');
+            $table->unsignedInteger('sales')->nullable();
             $table->foreignId('category_id')->constrained('categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

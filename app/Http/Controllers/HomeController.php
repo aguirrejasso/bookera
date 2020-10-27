@@ -26,10 +26,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $categories = Category::all();
-
         $books = Book::latest()->take(8)->get();
-
-        return view('home', compact('categories', 'books'));
+        return view('home', compact('books'));
     }
 }

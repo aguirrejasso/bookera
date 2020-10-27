@@ -11,8 +11,7 @@ class FindBookController extends Controller
     public function show(Request $request)
     {
        $books = Book::where('name', $request->search)->get();
-       $categories = Category::all();
-       return view('book.catalagoBook', compact('books', 'categories'));
+       return view('book.catalagoBook', compact('books'));
 
     }
 

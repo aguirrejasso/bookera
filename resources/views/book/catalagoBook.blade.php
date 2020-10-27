@@ -55,16 +55,14 @@
                                 @foreach ($books as $book)
                                     <div class="single-product-box">
                                         <div class="product-image">
-                                            <form class ="image"  href= "{{route('book.show',book)}}">
-                                                <a href="#">
+                                                <a href="{{ route('book.show', $book) }}">
                                                     <img src="{{ asset('img/books/' . $book->image) }}" alt="image">
                                                     <img src="{{ asset('img/books/' . $book->image) }}" alt="image">
                                                 </a>
-                                            </form>
                                         </div>
 
                                         <div class="product-content">
-                                            <h3><a href="#">{{$book->name}}</a></h3>
+                                            <h3><a href="{{ route('book.show', $book) }}">{{$book->name}}</a></h3>
 
                                             <div class="product-price">
                                                 <span class="new-price">${{$book->price}} MXN</span>
@@ -75,19 +73,6 @@
                                     @endforeach
                             </div>
                         </div>
-
-                        <nav class="woocommerce-pagination">
-                            <ul>
-                                <li><a href="#" class="page-numbers">1</a></li>
-                                <li><span class="page-numbers current">2</span></li>
-                                <li><a href="#" class="page-numbers">3</a></li>
-                                <li><a href="#" class="page-numbers">4</a></li>
-                                <li><span class="page-numbers dots">…</span></li>
-                                <li><a href="#" class="page-numbers">11</a></li>
-                                <li><a href="#" class="page-numbers">12</a></li>
-                                <li><a href="#" class="next page-numbers"><i class="fas fa-chevron-right"></i></a></li>
-                            </ul>
-                        </nav>
                     </div>
 
                      

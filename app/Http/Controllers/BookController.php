@@ -98,7 +98,9 @@ class BookController extends Controller
      */
     public function show(Book $libro)
     {
-        //
+        $related = $libro->category->books;
+        
+        return view('book.singleBook', compact('libro', 'related'));
     }
 
     /**
@@ -204,12 +206,6 @@ class BookController extends Controller
         $libro->delete();
 
         return redirect()->route('book.index');
-    }
-    public function show(Request $request)
-    {
-       $book = Book;
-       return view('book.singleBook','book');
-
     }
     
 }

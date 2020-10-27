@@ -80,6 +80,7 @@ class BookController extends Controller
         $categories = Category::all();
 
         return view('book.formBook', compact('categories'));
+        
     }
 
     /**
@@ -126,4 +127,11 @@ class BookController extends Controller
     {
         //
     }
+    public function show(Request $request)
+    {
+       $book = Book;
+       return view('book.singleBook','book');
+
+    }
+    
 }

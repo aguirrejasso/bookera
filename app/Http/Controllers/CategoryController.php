@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -105,7 +111,7 @@ class CategoryController extends Controller
     {
 
         $categoria->delete();
-        
+
         return redirect()->route('category.index');
     }
 }

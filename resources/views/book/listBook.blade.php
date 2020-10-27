@@ -49,7 +49,7 @@
                                 <td>{{ $book->id }}</td>
                                 <td>{{ $book->name }}</td>
                                 <td>{{ $book->author }}</td>
-                                <td>{{ $book->category_id }}</td>
+                                <td>{{ $book->category->category }}</td>
                                 <td>{{ $book->language }}</td>
                                 <td>{{ $book->edition }}</td>
                                 <td>{{ $book->year }}</td>

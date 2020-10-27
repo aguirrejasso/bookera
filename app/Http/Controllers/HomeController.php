@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Book;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,8 @@ class HomeController extends Controller
 
         $categories = Category::all();
 
-        return view('home', compact('categories'));
+        $books = Book::latest()->take(8)->get();
+
+        return view('home', compact('categories', 'books'));
     }
 }

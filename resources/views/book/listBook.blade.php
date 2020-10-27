@@ -57,7 +57,14 @@
                                 <td>{{ $book->stock }}</td>
                                 <td>{{ $book->created_at }}</td>
                                 <td>{{ $book->updated_at }}</td>
-                                <td>Botones</td>
+                                <td>
+                                  <a class="btn btn-warning" href="{{ route('book.edit', $book) }}" role="button">Actualizar</a>
+                                  <form class="d-inline" method="POST" action="{{ route('book.destroy', $book) }}">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                  </form>
+                                </td>
                             </tr>
                           @endforeach
                         </tbody>

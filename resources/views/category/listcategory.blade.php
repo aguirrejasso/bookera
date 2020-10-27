@@ -43,7 +43,14 @@
                                 <td>{{ $category->category }}</td>
                                 <td>{{ $category->created_at }}</td>
                                 <td>{{ $category->updated_at }}</td>
-                                <td>Botones</td>
+                                <td>
+                                  <a class="btn btn-warning" href="{{ route('category.edit', $category) }}" role="button">Actualizar</a>
+                                  <form class="d-inline" method="POST" action="{{ route('category.destroy', $category) }}">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                  </form>
+                                </td>
                             </tr>
                           @endforeach
                         </tbody>

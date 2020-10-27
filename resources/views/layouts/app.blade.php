@@ -94,7 +94,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item p-relative"><a href="#" class="nav-link active">Categorías <i class="fas fa-chevron-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    @foreach ($categories as $category)
+                                    @foreach (DB::table('categories')->get() as $category)
                                         <li class="nav-item"><a href="index.html" class="nav-link">{{ $category->category }}</a></li>
                                     @endforeach
                                 </ul>

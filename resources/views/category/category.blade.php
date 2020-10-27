@@ -29,7 +29,12 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" method="POST" action="{{ route('category.store') }}">
+                        @if (isset($categoria))
+                            <form role="form" method="POST" action="{{ route('category.update', $categoria) }}">
+                            @method("PATCH")
+                        @else
+                            <form role="form" method="POST" action="{{ route('category.store') }}">
+                        @endif
 
                             @csrf
 
@@ -37,12 +42,16 @@
                                 <div class="form-group">
                                     <label for="category">Nombre de la categoria</label>
                                     <input type="text" class="form-control" id="category" name="category"
-                                        placeholder="Categoria" required>
+                                        placeholder="Categoria" required value="{{isset($categoria) ? $categoria->category : null}}">
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Agregar</button>
+                                @if (isset($categoria))
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                @else
+                                    <button type="submit" class="btn btn-primary">Agregar</button>
+                                @endif
                             </div>
                         </form>
                     </div>

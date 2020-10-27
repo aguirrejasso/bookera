@@ -107,7 +107,8 @@
                                 
                                 <div class="search-overlay search-popup">
                                     <div class='search-box'>
-                                        <form class="search-form">
+                                        <form class="search-form" method= "post" action= "{{route('find')}}">
+                                            @csrf
                                             <input class="search-input" name="search" placeholder="Search" type="text">
 
                                             <button class="search-button" type="submit"><i class="fas fa-search"></i></button>

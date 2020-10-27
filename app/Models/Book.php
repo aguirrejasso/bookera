@@ -26,4 +26,14 @@ class Book extends Model
         'stock',
         'category_id'
     ];
+    //mutadores
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }

@@ -94,7 +94,9 @@
                         <ul class="navbar-nav">
                             <li class="nav-item p-relative"><a href="#" class="nav-link active">Categorías <i class="fas fa-chevron-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="index.html" class="nav-link">Ejemplo</a></li>
+                                    @foreach ($categories as $category)
+                                        <li class="nav-item"><a href="index.html" class="nav-link">{{ $category->category }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                         </ul>

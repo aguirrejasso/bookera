@@ -20,3 +20,4 @@ Route::resource('/admin/libros', App\Http\Controllers\BookController::class)->na
 Route::resource('/admin/categorias', App\Http\Controllers\CategoryController::class)->names('category');
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::post('/buscar', [App\Http\Controllers\FindBookController::class, 'show'])->name('find');
+Route::get('/libros/categoria/{categoria}', [App\Http\Controllers\FindBookController::class, 'index'])->name('findBy');

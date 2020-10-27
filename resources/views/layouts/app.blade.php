@@ -81,21 +81,21 @@
     <div class="navbar-area">
         <div class="comero-mobile-nav">
             <div class="logo">
-                <a href="{{route('home')}}"><img src="" alt="logo"></a>
+                <a href="{{route('home')}}"><img src="{{asset('img/logo.png')}}" alt="logo"></a>
             </div>
         </div>
 
         <div class="comero-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="{{ route('home') }}"><img src="" alt="logo"></a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{asset('img/logo.png')}}" alt="logo"></a>
 
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item p-relative"><a href="#" class="nav-link active">Categorías <i class="fas fa-chevron-down"></i></a>
                                 <ul class="dropdown-menu">
                                     @foreach (DB::table('categories')->get() as $category)
-                                        <li class="nav-item"><a href="index.html" class="nav-link">{{ $category->category }}</a></li>
+                                        <li class="nav-item"><a href="{{ route('findBy', $category->id) }}" class="nav-link">{{ $category->category }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -139,6 +139,126 @@
     <!-- End Navbar Area -->
 
     @yield('content')
+
+    <!-- Start Facility Area -->
+    <section class="facility-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="facility-box">
+                        <div class="icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Envio a todo el mundo</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="facility-box">
+                        <div class="icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <h3>Garantía de devolución del 100% del dinero</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="facility-box">
+                        <div class="icon">
+                            <i class="far fa-credit-card"></i>
+                        </div>
+                        <h3>Muchas formas de pago</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="facility-box">
+                        <div class="icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Soporte en línea 24/7</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Facility Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <div class="logo">
+                            <a href="#"><img src="{{asset('img/logo.png')}}" alt="logo"></a>
+                        </div>
+
+                        <p>En Bookera buscamos que todas las personas cambien su mente y su vida a traves del habito de la lectura</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>Enlaces rapidos</h3>
+
+                        <ul class="quick-links">
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Preguntas Frecuentes</a></li>
+                            <li><a href="#">Sobre Nuestros Servicios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>Informacion</h3>
+
+                        <ul class="information-links">
+                            <li><a href="#">Aviso de Privacidad</a></li>
+                            <li><a href="#">Terminos y Condiciones</a></li>
+                            <li><a href="#">Politica de Envios</a></li>
+                            <li><a href="#">Politica de Devolucion</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>Contactanos</h3>
+
+                        <ul class="footer-contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Direccion: 2750 Quadra Street Victoria, Canada</li>
+                            <li><i class="fas fa-phone"></i> Telefono: <a href="#">(+123) 456-7898</a></li>
+                            <li><i class="far fa-envelope"></i> Email: <a href="#">support@bookera.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p>Copyright @2020 Bookera. All Rights Reserved</p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <ul class="payment-card">
+                            <li><a href="#" target="_blank"><img src="{{ asset('img/visa.png')}}" alt="image"></a></li>
+                            <li><a href="#" target="_blank"><img src="{{ asset('img/mastercard.png')}}" alt="image"></a></li>
+                            <li><a href="#" target="_blank"><img src="{{ asset('img/mastercard2.png')}}" alt="image"></a></li>
+                            <li><a href="#" target="_blank"><img src="{{ asset('img/visa2.png')}}" alt="image"></a></li>
+                            <li><a href="#" target="_blank"><img src="{{ asset('img/expresscard.png')}}" alt="image"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -
 
     <div class="go-top"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></div>
 

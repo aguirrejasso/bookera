@@ -67,15 +67,19 @@
                                         <a href="#" data-toggle="modal" data-target="#productShippingModal"><i class="fas fa-truck"></i> Envio a todo el país</a>
                                     </div>
 
-                                    <div class="product-add-to-cart">
-                                        <div class="input-counter">
-                                            <span class="minus-btn"><i class="fas fa-minus"></i></span>
-                                            <input type="text" value="1">
-                                            <span class="plus-btn"><i class="fas fa-plus"></i></span>
+                                    <form method="POST" action="{{ route('cart.update', $libro) }}">
+                                        @csrf
+                                        @method("PATCH")
+                                        <div class="product-add-to-cart">
+                                            <div class="input-counter">
+                                                <span class="minus-btn"><i class="fas fa-minus"></i></span>
+                                                <input type="text" name="quantity" value="1">
+                                                <span class="plus-btn"><i class="fas fa-plus"></i></span>
+                                            </div>
+    
+                                            <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> AÑADIR</button>
                                         </div>
-
-                                        <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> AÑADIR</button>
-                                    </div>
+                                    </form>
 
                                     <div class="buy-checkbox-btn">
                                         

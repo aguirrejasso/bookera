@@ -37,14 +37,14 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="single-product-box">
                             <div class="product-image">
-                                <a href="#">
+                                <a href="{{ route('book.show', $book) }}">
                                     <img src="{{ asset('img/books/' . $book->image) }}" alt="image">
                                     <img src="{{ asset('img/books/' . $book->image) }}" alt="image">
                                 </a>
                             </div>
 
                             <div class="product-content">
-                                <h3><a href="#">{{ $book->name }}</a></h3>
+                                <h3><a href="{{ route('book.show', $book) }}">{{ $book->name }}</a></h3>
 
                                 <div class="product-price">
                                     <span class="new-price">${{ $book->price }} MXN</span>

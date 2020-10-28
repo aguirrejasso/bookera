@@ -16,7 +16,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $carts = Auth::user()->carts;
+
+        return view('cart.cart', compact('carts'));
     }
 
     /**
@@ -86,9 +88,26 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $cart)
+    public function update(Request $request, Book $carrito)
     {
-        //
+        $e = Cart::where('user_id', Auth::user()->id)->where('book_id', $carrito->id)->exists();
+
+        
+        if($e == true){
+            $exist = Cart::where('user_id', Auth::user()->id)->where('book_id', $carrito->id)->get();
+            $n = $exist[0]->quantity += $request->quantity;
+            Cart::where('user_id', Auth::user()->id)->where('book_id', $carrito->id)->update(['quantity' => $n]);
+        }else{
+            Cart::create([
+            'user_id' => Auth::user()->id,
+            'book_id' => $carrito->id,
+            'quantity' => $request->quantity
+            ]);
+        }
+        
+        $carts = Auth::user()->carts;
+
+        return view('cart.cart', compact('carts'));
     }
 
     /**

@@ -45,4 +45,9 @@ class Book extends Model
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }

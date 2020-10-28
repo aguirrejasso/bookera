@@ -67,7 +67,7 @@
                                 <div class="product-price">
                                     <span class="new-price">${{$book->price}} MXN</span>
                                 </div>
-                                <a href="#" class="btn btn-light">AGREGAR AL CARRITO</a>
+                                <a href="{{ route('cart.edit', $book->id) }}" class="btn btn-light">AGREGAR AL CARRITO</a>
                             </div>
                         </div>
                     </div>

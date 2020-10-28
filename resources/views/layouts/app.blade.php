@@ -120,7 +120,7 @@
                                 @if(!Auth::check())
                                     <a href="{{route('login')}}">Ingresar</a>
                                 @else
-                                    <a href="{{route('login')}}">{{Auth::user()->name}}</a>
+                                    <a href="{{route('orders')}}">{{Auth::user()->name}}</a>
                                 @endif
                             </div>
 

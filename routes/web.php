@@ -21,3 +21,4 @@ Route::resource('/admin/categorias', App\Http\Controllers\CategoryController::cl
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::post('/buscar', [App\Http\Controllers\FindBookController::class, 'show'])->name('find');
 Route::get('/libros/categoria/{categoria}', [App\Http\Controllers\FindBookController::class, 'index'])->name('findBy');
+Route::get('/ordenes', [App\Http\Controllers\OrdersController::class, 'index'])->name('orders');

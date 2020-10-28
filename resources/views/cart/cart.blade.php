@@ -9,21 +9,16 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="billing-details">
-                        <h3 class="title">Billing Details</h3>
+                        <h3 class="title">Detalles de Facturación</h3>
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <label>Country <span class="required">*</span></label>
+                                    <label>País <span class="required">*</span></label>
 
                                     <div class="select-box">
                                         <select class="form-control">
-                                            <option value="5">United Arab Emirates</option>
-                                            <option value="1">China</option>
-                                            <option value="2">United Kingdom</option>
-                                            <option value="0">Germany</option>
-                                            <option value="3">France</option>
-                                            <option value="4">Japan</option>
+                                            <option value="5">México</option>
                                         </select>
                                     </div>
                                 </div>
@@ -31,63 +26,63 @@
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>First Name <span class="required">*</span></label>
+                                    <label>Nombre <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>Last Name <span class="required">*</span></label>
+                                    <label>Apellido <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <label>Company Name</label>
+                                    <label>Nombre de la empresa</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Address <span class="required">*</span></label>
+                                    <label>Dirección <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Town / City <span class="required">*</span></label>
+                                    <label>Ciudad<span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>State / County <span class="required">*</span></label>
+                                    <label>Estado <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                    <label>Código postal <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>Email Address <span class="required">*</span></label>
+                                    <label>Correo eléctronico <span class="required">*</span></label>
                                     <input type="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label>Phone <span class="required">*</span></label>
+                                    <label>Teléfono <span class="required">*</span></label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
@@ -95,15 +90,15 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="create-an-account">
-                                    <label class="form-check-label" for="create-an-account">Create an account?</label>
+                                    <label class="form-check-label" for="create-an-account">Crear una cuenta</label>
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="ship-different-address">
-                                    <label class="form-check-label" for="ship-different-address">Ship to a different
-                                        address?</label>
+                                    <label class="form-check-label" for="ship-different-address">Enviar a una dirección diferente
+                                        </label>
                                 </div>
                             </div>
 
@@ -119,7 +114,7 @@
 
                 <div class="col-lg-6 col-md-12">
                     <div class="order-details">
-                        <h3 class="title">Your Order</h3>
+                        <h3 class="title">Tu Orden</h3>
 
                         <div class="order-table table-responsive">
                             <table class="table table-bordered">
@@ -154,23 +149,20 @@
                         <div class="payment-method">
                             <p>
                                 <input type="radio" id="direct-bank-transfer" name="radio-group" checked>
-                                <label for="direct-bank-transfer">Direct Bank Transfer</label>
+                                <label for="direct-bank-transfer">Transferencia bancaria directa</label>
 
-                                Make your payment directly into our bank account. Please use your Order ID as the
-                                payment reference. Your order will not be shipped until the funds have cleared in our
-                                account.
+                                Realice su pago directamente en nuestra cuenta bancaria. Utilice su ID de pedido como referencia de pago. Su pedido no se enviará hasta que los fondos se hayan liquidado en nuestra cuenta.
                             </p>
                             <p>
                                 <input type="radio" id="paypal" name="radio-group">
                                 <label for="paypal">PayPal</label>
                             </p>
                             <p>
-                                <input type="radio" id="cash-on-delivery" name="radio-group">
-                                <label for="cash-on-delivery">Cash on Delivery</label>
+                                
                             </p>
                         </div>
 
-                        <a href="#" class="btn btn-primary order-btn">Place Order</a>
+                        <a href="#" class="btn btn-primary order-btn">Pedir</a>
                     </div>
                 </div>
             </div>

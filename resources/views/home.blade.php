@@ -11,11 +11,9 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="main-banner-content">
-                        <span>Contexto</span>
-                        <h1>Titulo</h1>
-                        <p>Pequeña descripcion</p>
-
-                        <a href="#" class="btn btn-primary">Ver Libro</a>
+                        <span>Librería</span>
+                        <h1>BOOKERA</h1>
+                        <p></p>
                     </div>
                 </div>
             </div>

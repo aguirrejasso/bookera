@@ -23,3 +23,4 @@ Route::post('/buscar', [App\Http\Controllers\FindBookController::class, 'show'])
 Route::get('/libros/categoria/{categoria}', [App\Http\Controllers\FindBookController::class, 'index'])->name('findBy');
 Route::get('/ordenes', [App\Http\Controllers\OrdersController::class, 'index' ])->name('orders');
 Route::resource('/carrito', App\Http\Controllers\CartController::class)->names('cart');
+Route::resource('/admin/administradores',App\Http\Controllers\AdminController::class)->names('Admins');

@@ -126,7 +126,7 @@
 
                             <div class="option-item"><a href="{{ route('cart.index') }}">Carrito <i class="fas fa-shopping-bag"></i></a></div>
 
-                            @if(Auth::check())
+                            @if(Auth::check() && Auth::user()->tipo == "admin")
                                 <div class="option-item"><a href="{{ route('dashboard') }}" class="text-danger">Administrar </a></div>
                             @endif
 

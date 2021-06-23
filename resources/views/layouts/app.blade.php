@@ -130,6 +130,17 @@
                                 <div class="option-item"><a href="{{ route('dashboard') }}" class="text-danger">Administrar </a></div>
                             @endif
 
+                            @if(Auth::check())
+
+                            <div class="option-item">
+                                <a href="javascript:{}" onclick="document.getElementById('form_logout').submit(); return false;">Cerrar Sesion</a>
+                            </div>
+                            @endif
+
+                            <form method="POST" action="{{ route('logout') }}" id="form_logout">
+                                    @csrf 
+                            </form>
+
                         </div>
                     </div>
                 </nav>

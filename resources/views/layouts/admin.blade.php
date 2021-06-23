@@ -47,7 +47,16 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('home') }}" class="nav-link">Tienda</a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                        <a href="javascript:{}" onclick="document.getElementById('form_logout').submit(); return false;" class="nav-link">Cerrar Sesion</a>
+                </li>
+
+                
             </ul>
+
+            <form method="POST" action="{{ route('logout') }}" id="form_logout">
+                @csrf 
+            </form>
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
